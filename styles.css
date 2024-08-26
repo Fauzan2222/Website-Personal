@@ -1,0 +1,286 @@
+/* General Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    color: #333;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+header {
+    background: #333;
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #00bfff;
+}
+
+#toggle-dark-mode {
+    padding: 7px 15px;
+    margin-right: 20px;
+    cursor: pointer;
+    background-color: #00bfff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+#toggle-dark-mode:hover {
+    background-color: #008fbf;
+}
+
+/* Hero Section */
+.hero {
+    background: url('images/hero.jpg') no-repeat center center/cover;
+    color: white;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    position: relative;
+}
+
+.hero h1 {
+    font-size: 3.5em;
+    margin-bottom: 10px;
+    animation: fadeInDown 1s ease-out;
+}
+
+.hero p {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    animation: fadeInUp 1.5s ease-out;
+}
+
+#scroll-down {
+    padding: 10px 20px;
+    background-color: #00bfff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    animation: bounce 2s infinite;
+    transition: background-color 0.3s;
+}
+
+#scroll-down:hover {
+    background-color: #008fbf;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+/* About Section */
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    flex-wrap: wrap;
+    padding: 50px 20px;
+}
+
+.profile-photo {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-right: 30px;
+    object-fit: cover;
+    border: 5px solid #00bfff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.profile-photo:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.about-container p {
+    max-width: 600px;
+    font-size: 1.1em;
+    line-height: 1.8;
+    color: #444;
+}
+
+/* Portfolio Section */
+#portfolio {
+    background-color: #f0f0f0;
+    padding: 50px 20px;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.portfolio-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.portfolio-item:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.3s;
+}
+
+.portfolio-item:hover .overlay {
+    opacity: 1;
+}
+
+.overlay h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.overlay p {
+    font-size: 1em;
+    margin: 0;
+}
+
+/* Contact Section */
+#contact {
+    padding: 50px 20px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+}
+
+#contact a {
+    color: #00bfff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+#contact a:hover {
+    color: #008fbf;
+}
+
+/* Footer */
+footer {
+    background: #222;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Dark Mode */
+.dark-mode {
+    background-color: #222;
+    color: #ddd;
+}
+
+.dark-mode header {
+    background: #444;
+}
+
+.dark-mode footer {
+    background: #111;
+}
+
+.dark-mode nav ul li a {
+    color: #ddd;
+}
+
+.dark-mode nav ul li a:hover {
+    color: #00bfff;
+}
+
+.dark-mode #toggle-dark-mode {
+    background-color: #444;
+    color: #ddd;
+}
+
+.dark-mode .hero {
+    background: url('images/hero-dark.jpg') no-repeat center center/cover;
+}
